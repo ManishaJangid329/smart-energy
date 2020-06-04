@@ -1,2 +1,1 @@
-start server\\SmartEnergy.exe
-exit
+./server/serverStart.sh
