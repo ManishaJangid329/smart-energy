@@ -11,6 +11,10 @@ export class PredictionService {
   baseUrl = environment.baseUrl; 
   constructor(@Inject(HttpClient) private http: HttpClient) { }
 
+initAPI() {
+  return this.http.get(this.baseUrl+ 'SmartEnergy/init') ;
+}
+
 weatherSolarAPI(){
   return this.http.get(this.baseUrl+ 'SmartEnergy/weather-forecast-solar') ;
 }

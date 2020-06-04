@@ -98,11 +98,11 @@ export class DashboardComponent implements OnInit {
       series: [response.value]
     };
     let optionsChart: any = { lineSmooth: Chartist.Interpolation.cardinal({ tension: 10}), low: 100,high: 3000, 
-    chartPadding: { top: 0, right: 0, bottom: 0, left: 0},}
+    chartPadding: { top: 0, right: 0, bottom: 0, left: 10},}
    
     if(GraphDivId=="#WindEnergy") {
-       optionsChart = { lineSmooth: Chartist.Interpolation.cardinal({ tension: 10}), low: 0,high: 9, 
-      chartPadding: { top: 0, right: 0, bottom: 0, left: 0},}
+       optionsChart = { lineSmooth: Chartist.Interpolation.cardinal({ tension: 10}), low: 0,high: 25, 
+      chartPadding: { top: 0, right: 0, bottom: 0, left: 10},}
   
     }
     
@@ -125,7 +125,7 @@ onGraphLoadFirst(GraphDivId) {
     ]
   };
   const optionsChart: any = { lineSmooth: Chartist.Interpolation.cardinal({ tension: 10}), low: 100,high: 3000, 
-    chartPadding: { top: 0, right: 0, bottom: 0, left: 0},}
+    chartPadding: { top: 0, right: 0, bottom: 0, left: 10},}
 
     var Chart = new Chartist.Line(GraphDivId, dataChart, optionsChart);
     this.startAnimationForLineChart(Chart);

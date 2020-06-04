@@ -8,6 +8,7 @@ import {WindPowerPlantComponent} from '../../windEnergy/windPowerPlant/windPower
 import { SolarEnergyComponent } from '../../solarEnergy/solarEnergy.component';
 import {SolarPowerPlantComponent} from '../../solarEnergy/solarPowerPlant/solarPowerPlant.component' ;
 import { TodaysWeatherComponent } from '../../todaysWeather/todaysWeather.component';
+import { PowerBalanceComponent } from 'app/power-balance/power-balance.component';
 
 export const AdminLayoutRoutes: Routes = [
     
@@ -18,5 +19,6 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'solarEnergy/solarPowerPlant/:id',  component: SolarPowerPlantComponent },
     { path: 'windEnergy',  component: WindEnergyComponent },
     { path: 'windEnergy/windPowerPlant/:id',  component: WindPowerPlantComponent },
+     { path: 'powerSupplyBalance',  component: PowerBalanceComponent },
 ];
 

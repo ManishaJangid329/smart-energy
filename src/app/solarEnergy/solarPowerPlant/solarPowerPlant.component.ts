@@ -276,7 +276,8 @@ solarPanel
 
    changeSolarChart(value) {
      this.solarPanel= value ;
-        this.ngOnInit();
+     this.data_pressureGauge.dials.dial.value = this.solarPanel
+    
    }
   }
 
