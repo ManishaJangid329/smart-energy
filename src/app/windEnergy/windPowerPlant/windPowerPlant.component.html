@@ -8,9 +8,9 @@
                 <span>
                      <div class="row">
                         <div class="col-lg-4 form-group ">
-                            <select class="form-control" id="sel1" style="color: white;" >
+                            <!-- <select class="form-control" id="sel1" style="color: white;" >
                                 <option *ngFor="let wind of windPowerPlant" style="color: black;" >{{wind.name}}</option>
-                            </select>
+                            </select> -->
                         </div>
 
                      </div>
@@ -80,8 +80,8 @@
 
                             <div class="col-lg-6" >
                                 
-                                    <div id="map" style="height: 70%;"></div>
-
+                                    <!-- <div id="map" style="height: 70%;"></div> -->
+                                     <div #mapContainer id="map"></div>
                             </div>
 
                            
@@ -124,7 +124,9 @@
       
 
     </div>
+    
     <br><hr><br>
+   
     <div class="row">
         <h3 style="margin-left: 40%;">Photo Gallery </h3> <br>
     <div class="col-lg-7 " style="margin-left: 15%;"> 
@@ -155,6 +157,7 @@
             
 </div>
    <br><br><br><br>
+
 </div>
 </div>
 </div>

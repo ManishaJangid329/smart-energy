@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 declare var $: any;
 
 declare const google: any;
@@ -38,138 +38,138 @@ export class WindEnergyComponent implements OnInit {
   }
   ngOnInit() 
   {
-    var myLatlng = new google.maps.LatLng(40.748817, -73.985428);
-    var mapOptions = {
-        zoom: 13,
-        center: myLatlng,
-        scrollwheel: false, //we disable de scroll over the map, it is a really annoing when you scroll through page
-        styles: [{
-            "featureType": "water",
-            "stylers": [{
-                "saturation": 43
-            }, {
-                "lightness": -11
-            }, {
-                "hue": "#0088ff"
-            }]
-        }, {
-            "featureType": "road",
-            "elementType": "geometry.fill",
-            "stylers": [{
-                "hue": "#ff0000"
-            }, {
-                "saturation": -100
-            }, {
-                "lightness": 99
-            }]
-        }, {
-            "featureType": "road",
-            "elementType": "geometry.stroke",
-            "stylers": [{
-                "color": "#808080"
-            }, {
-                "lightness": 54
-            }]
-        }, {
-            "featureType": "landscape.man_made",
-            "elementType": "geometry.fill",
-            "stylers": [{
-                "color": "#ece2d9"
-            }]
-        }, {
-            "featureType": "poi.park",
-            "elementType": "geometry.fill",
-            "stylers": [{
-                "color": "#ccdca1"
-            }]
-        }, {
-            "featureType": "road",
-            "elementType": "labels.text.fill",
-            "stylers": [{
-                "color": "#767676"
-            }]
-        }, {
-            "featureType": "road",
-            "elementType": "labels.text.stroke",
-            "stylers": [{
-                "color": "#ffffff"
-            }]
-        }, {
-            "featureType": "poi",
-            "stylers": [{
-                "visibility": "off"
-            }]
-        }, {
-            "featureType": "landscape.natural",
-            "elementType": "geometry.fill",
-            "stylers": [{
-                "visibility": "on"
-            }, {
-                "color": "#b8cb93"
-            }]
-        }, {
-            "featureType": "poi.park",
-            "stylers": [{
-                "visibility": "on"
-            }]
-        }, {
-            "featureType": "poi.sports_complex",
-            "stylers": [{
-                "visibility": "on"
-            }]
-        }, {
-            "featureType": "poi.medical",
-            "stylers": [{
-                "visibility": "on"
-            }]
-        }, {
-            "featureType": "poi.business",
-            "stylers": [{
-                "visibility": "simplified"
-            }]
-        }]
 
-    };
-    var map = new google.maps.Map(document.getElementById("map"), mapOptions);
-
-    var marker = new google.maps.Marker({
-        position: myLatlng,
-        title: "Hello World!"
-    });
-
-    // To add the marker to the map, call setMap();
-    marker.setMap(map);
-
-   
-    this.windPowerPlant =[
-      { 
-        id : 0 ,
-        name:'Acciona Tuppadahalli', 
-        location:'Chitradurga, Karnataka',
-        capacity:"56.1 MegaWatt"
-      },
-      { 
-        id : 1 ,
-        name:'Shah Gajendragarh MMTCL', 
-        location:' Gadag, Karnataka' ,
-        capacity:" 15 MegaWatt "
-      },
-      { id : 2 ,
-        name:'Jogmatti BSES ', 
-        location:'Chitradurga, Karnataka ' ,
-        capacity:" 14 MegaWatt"
-      },
-      { id : 3 ,
-        name:'Shah Gajendragarh', 
-        location:'Gadag, Karnataka' ,
-        capacity:"10.8 MegaWatt"
-      },
-     ] ;
+    this.windPowerPlant = [
+            {
+                id: 0,
+                lng: 13.917479,
+                lat: 76.066269,
+                name: 'Acciona Tuppadahalli',
+                location: 'Chitradurga, Karnataka',
+                capacity: "56.1 MegaWatt",
+                image_src: 'pavagada',
+            },
+            {
+                id: 1,
+                lng: 15.736414,
+                lat: 75.970502,
+                name: 'Shah Gajendragarh MMTCL',
+                location: ' Gadag, Karnataka',
+                capacity: " 15 MegaWatt ",
+                image_src: 'adani',
+            },
+            {
+                id: 2,
+                lng: 14.172776,
+                lat: 76.390727,
+                name: 'Jogmatti BSES ',
+                location: 'Chitradurga, Karnataka ',
+                capacity: " 14 MegaWatt",
+                image_src: 'karnataka',
+            },
+            {
+                id: 3,
+                lng: 15.736538,
+                lat: 75.971575,
+                name: 'Shah Gajendragarh',
+                location: 'Gadag, Karnataka',
+                capacity: "10.8 MegaWatt",
+                image_src: 'ramanagara',
+            },
+        ];
 
 }
 
 SolarDetail(id) {
   console.log("id",id)
 }
+
+ title = 'angular-gmap';
+    @ViewChild('mapContainer', { static: false }) gmap: ElementRef;
+    map: google.maps.Map;
+    lat = 14.138323;
+    lng = 77.314646;
+    markers = [
+        {
+            position: new google.maps.LatLng(13.917479, 76.066269),
+            map: this.map,
+            title: "Acciona Tuppadahalli Chitradurga, Karnataka"
+          },
+          {
+            position: new google.maps.LatLng(15.736414, 75.970502),
+            map: this.map,
+            title: "Shah Gajendragarh MMTCL Gadag, Karnataka"
+          },
+          {
+            position: new google.maps.LatLng(14.172776, 76.390727),
+            map: this.map,
+            title: "Jogmatti BSES Chitradurga, Karnataka"
+          },
+          {
+            position: new google.maps.LatLng(15.736538, 75.971575),
+            map: this.map,
+            title: "Shah Gajendragarh Gadag, Karnataka"
+          },
+         
+      ];
+
+    coordinates = new google.maps.LatLng(this.lat, this.lng);
+
+    mapOptions: google.maps.MapOptions = {
+     center: this.coordinates,
+     zoom: 7 ,
+     mapTypeId: google.maps.MapTypeId.HYBRID
+    };
+
+    marker = new google.maps.Marker({
+      position: this.coordinates,
+      map: this.map,
+    });
+
+
+
+    ngAfterViewInit() {
+      this.mapInitializer();
+    } 
+
+    loadAllMarkers(): void {
+        this.markers.forEach(markerInfo => {
+          //Creating a new marker object
+          const marker = new google.maps.Marker({
+            ...markerInfo
+          });
+    
+          //creating a new info window with markers info
+          const infoWindow = new google.maps.InfoWindow({
+            content: marker.getTitle()
+          });
+    
+          //Add click event to open info window on marker
+          marker.addListener("click", () => {
+            infoWindow.open(marker.getMap(), marker);
+          });
+    
+          //Adding marker to google map
+          marker.setMap(this.map);
+        });
+      }
+
+   mapInitializer(): void {
+    this.map = new google.maps.Map(this.gmap.nativeElement, this.mapOptions);
+
+    //Adding Click event to default marker
+    this.marker.addListener("click", () => {
+      const infoWindow = new google.maps.InfoWindow({
+        content: this.marker.getTitle()
+      });
+      infoWindow.open(this.marker.getMap(), this.marker);
+    });
+
+    //Adding default marker to map
+    this.marker.setMap(this.map);
+
+    //Adding other markers
+    this.loadAllMarkers();
+  }
 
 }

@@ -1,87 +1,84 @@
-
-
 <div class="main-content">
-  <div class="container-fluid">
-      <div class="card">
-          <div class="card-header card-header-danger">
-              <h3 class="card-title">Weekly Weather Forecast</h3>
-              <p class="card-category">Bangalore City 
-              </p>
-          </div>
-          <div class="card-body">
-            <div class="main-content">
-              <div class="container-fluid">
-                <br><br> <br><br><br><br><br>
-                <div class="container " style="color: white;">
-                  <div class="forecast-container overflow-auto">
-                    <div class="today forecast">
-                      <div class="forecast-header">
-                        <div class="day">{{WeeklyWeatherData[0].day}}</div>
-                        <div class="date">{{WeeklyWeatherData[0].date }}</div>
-                      </div> <!-- .forecast-header -->
-                      <div class="forecast-content">
-                        <div class="location">Bangalore</div>
-                        <div class="degree">
-                          <div class="num">{{WeeklyWeatherData[0].minTemperature}}</div>
-                         
-                          <!-- <div class="num">23<sup>o</sup>C</div> -->
-                          <!-- icon-1 -->
-                          <div class="forecast-icon">
-                           
-                            <!-- <img src="{{'assets/images/icons/'+imageIcon[WeeklyWeatherData[0].weatherCondition]+'.svg'}}" alt="" width=90> -->
-                            <img src="{{'assets/images/icons/'+getImageIcon(WeeklyWeatherData[0].weatherCondition)+'.svg'}}" alt="" width=90>
-                          </div>	
-                        </div>
-                        <br>
-                        <span ><img src="assets/images/icon-umberella.png" alt="">20%</span>
-                        <span><img src="assets/images/icon-wind.png" alt="">18km/h</span>
-                        <span><img src="assets/images/icon-compass.png" alt="">East</span>
-                      </div>
-                    </div>
-                    
-                    <div class="forecast " *ngFor="let data of WeeklyWeatherData| slice:0:8; let i=index">
-                      
-                      <div class="forecast-header" *ngIf="i!=0 ">
-                        <div class="day" style="font-size:9px;">{{WeeklyWeatherData[i]?.day}}
-                          
-                        </div>
-                      </div> 
-                      <div class="forecast-content" *ngIf="i!=0">
-                        <div class="forecast-icon">
-                           <!-- {{WeeklyWeatherData[i]?.weatherCondition}} -->
-                          <img src="{{'assets/images/icons/'+getImageIcon(WeeklyWeatherData[i]?.weatherCondition)+'.svg'}}" alt="" width=48>
-                        </div>
-                        <div class="degree" style="font-size: small;">{{WeeklyWeatherData[i].minTemperature}}</div>
-                        <div class="degree" style="font-size: small;">{{WeeklyWeatherData[i].maxTemperature}}</div>
-                        
-                      </div>
-                    </div>
-            
-            
-                  </div>
-                </div>
-                <h3>Weekly Temperature </h3><br><br>
-                <div class="card-body card-header-success " style="width:95%;margin-left: 20px;padding:50px;"> 
-                     <div  class="ct-chart" id="Temperature" data-x-axis="Time (Days) " data-y-axis="Temperature (℉)" ></div>
-               
-            
-              </div><br><br><br>
-              <h3>Weekly Wind Speed </h3><br><br>
-
-                <div class="card-body card-header-warning" style="width:95%;margin-left: 20px;padding:50px;"> 
-                     <div  class="ct-chart" id="WindSpeed" data-x-axis="Time (Days) " data-y-axis="Wind Speed (Mph)" ></div>
-               
-            
-              </div>
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-header card-header-danger">
+                <h3 class="card-title">Weekly Weather Forecast</h3>
+                <p class="card-category">Bangalore City
+                </p>
             </div>
-          </div>
-         
-      </div>
-  </div>
-</div>
+            <div class="card-body">
+                <div class="main-content">
+                    <div class="container-fluid">
+                        <br><br> <br><br><br><br><br>
+                        <div class="container " style="color: white;">
+                            <div class="forecast-container overflow-auto">
+                                <div class="today forecast">
+                                    <div class="forecast-header">
+                                        <div class="day">{{WeeklyWeatherData[0].day}}</div>
+                                        <div class="date">{{WeeklyWeatherData[0].date }}</div>
+                                    </div> 
+                                    <div class="forecast-content">
+                                        <div class="location">Bangalore</div>
+                                        <div class="degree">
+                                            <div class="num">{{WeeklyWeatherData[0].minTemperature}}</div>
+
+                                           
+                                            <div class="forecast-icon">
+
+                                                <img src="{{'assets/images/icons/'+getImageIcon(WeeklyWeatherData[0].weatherCondition)+'.svg'}}"
+                                                    alt="" width=90>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <span><img src="assets/images/icon-umberella.png" alt="">20%</span>
+                                        <span><img src="assets/images/icon-wind.png" alt="">18km/h</span>
+                                        <span><img src="assets/images/icon-compass.png" alt="">East</span>
+                                    </div>
+                                </div>
+
+                                <div class="forecast " *ngFor="let data of WeeklyWeatherData| slice:0:6; let i=index">
+                                        {{index}}
+                                    <div class="forecast-header" >
+                                        <div class="day" style="font-size:9px;">{{WeeklyWeatherData[i]?.day}}
+
+                                        </div>
+                                    </div>
+                                    <div class="forecast-content" >
+                                        <div class="forecast-icon">
+                                            <img src="{{'assets/images/icons/'+getImageIcon(WeeklyWeatherData[i]?.weatherCondition)+'.svg'}}"
+                                                alt="" width=48>
+                                        </div>
+                                        <div class="degree" style="font-size: small;">
+                                            {{WeeklyWeatherData[i].minTemperature}}</div>
+                                        <div class="degree" style="font-size: small;">
+                                            {{WeeklyWeatherData[i].maxTemperature}}</div>
+
+                                    </div>
+                                </div>
 
 
+                            </div>
+                        </div>
+                        <h3>Weekly Temperature </h3>
+                        <div style="padding-bottom:30px">
+                            <button class="btn  btn-info" style='background-color: #31C2DD;'
+                                (click)="changeGraph('min')">Min Temperature</button>
+                            <button class="btn  btn-primary" style='background-color: #303544;'
+                                (click)="changeGraph('max')">Max Temperature</button>
+                            <button class="btn  btn-dark " style='background-color: #262936;'
+                                (click)="changeGraph('both')">Both </button>
+                        </div>
+                        <br><br>
+                        <div class="card-body card-header-info"  style="width:95%;margin-left: 20px;padding:50px;">
+                            <div class="ct-chart" id="Temperature" data-x-axis="Time (Days) "
+                                data-y-axis="Temperature (℉)"></div>
+                        </div>
+                        <br><br><br>
 
 
+                    </div>
+                </div>
 
-
+            </div>
+        </div>
+    </div>

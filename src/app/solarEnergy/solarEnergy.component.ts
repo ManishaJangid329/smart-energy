@@ -20,24 +20,24 @@ export class SolarEnergyComponent implements OnInit {
   solarPowerPlant
   
   constructor() { }
-  showNotification(from, align){
-      const type = ['','info','success','warning','danger'];
+//   showNotification(from, align){
+//       const type = ['','info','success','warning','danger'];
 
-      const color = Math.floor((Math.random() * 4) + 1);
+//       const color = Math.floor((Math.random() * 4) + 1);
 
-      $.notify({
-          icon: "notifications",
-          message: "Welcome to <b>Material Dashboard</b> - a beautiful freebie for every web developer."
+//       $.notify({
+//           icon: "notifications",
+//           message: "Welcome to <b>Material Dashboard</b> - a beautiful freebie for every web developer."
 
-      },{
-          type: type[color],
-          timer: 4000,
-          placement: {
-              from: from,
-              align: align
-          }
-      });
-  }
+//       },{
+//           type: type[color],
+//           timer: 4000,
+//           placement: {
+//               from: from,
+//               align: align
+//           }
+//       });
+//   }
   ngOnInit() 
   {
 

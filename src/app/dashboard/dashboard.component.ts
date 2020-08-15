@@ -102,7 +102,7 @@ export class DashboardComponent implements OnInit {
    
     if(GraphDivId=="#WindEnergy") {
        optionsChart = { lineSmooth: Chartist.Interpolation.cardinal({ tension: 10}), low: 0,high: 25, 
-      chartPadding: { top: 0, right: 0, bottom: 0, left: 10},}
+      chartPadding: { top: 0, right: 0, bottom: 0, left: 20},}
   
     }
     

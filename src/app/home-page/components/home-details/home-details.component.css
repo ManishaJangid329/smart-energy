@@ -1,42 +1,90 @@
-
-
-.page-section{
-
+.page-section {
     margin-left: 300px;
 }
 
+.intro-text {
+    left: 0;
+    width: 60%;
+    margin-top: 3rem;
+    position: absolute;
+}
 
+.mySmallerDiv {
+    width: 40%;
+    margin-top: -400px;
+    opacity: 0.9;
+    margin-left: 50px;
+}
+.mybtn {
+    background-color: rgba(230, 167, 86, 0.9);
+}
+.myBiggerDiv {
+    width: 100%;
+    opacity: 0.9;
+    background-color: rgba(230, 167, 86, 0.9);
+    padding: 100px;
+}
 
-.intro-text{left:0;width:60%;margin-top:3rem;position:absolute}
-    
-.intro .intro-text .intro-button{width:100%;left:0;position:absolute;bottom:-2rem}
+.borderProp {
+    border: 1px solid white;
+}
 
-  .mySmallerDiv{
-      width: 40%;
-      margin-top: -400px;
-     opacity: 0.9;
-     margin-left: 50px;
-  }
-  .mybtn{
-    background-color: rgba(230,167,86,.9);
-
-  }
-  .myBiggerDiv{
-      width: 100%; 
-      opacity: 0.9;
-      background-color: rgba(230,167,86,.9);
-      padding: 100px;
-  }
-
-  .borderProp{
-      border: 1px solid white;
-     
-  }
-
-  .outer {
+.outer {
     background-clip: content-box;
-    padding:0px 15px 0px 15px;
-    border: 5px solid white ;
+    padding: 0px 15px 0px 15px;
+    border: 5px solid white;
     border-radius: 5px;
-  }
+}
+
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    80% {
+        transform: translateX(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    80% {
+        transform: translateX(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes moveInTop {
+    0% {
+        opacity: 0;
+        transform: translateY(80px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.intro .intro-text .intro-button {
+    width: 100%;
+    left: 0;
+    position: absolute;
+    bottom: -2rem;
+    transition: all 0.2s;
+    animation: moveInTop 1s ease-in;
+    animation-fill-mode: backwards;
+}
+
+
 

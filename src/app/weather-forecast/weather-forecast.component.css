@@ -117,4 +117,9 @@
 
      /*  */
 
- 
+.card .card-header-danger:not(.card-header-icon):not(.card-header-text) {
+    background: linear-gradient(60deg, #303544 , #31C2DD);
+}
+:host ::ng-deep .sidebar[data-color=danger] li.active > a {
+    background-color:#31C2DD !important ;
+}

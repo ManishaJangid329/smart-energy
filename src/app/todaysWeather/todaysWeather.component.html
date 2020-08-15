@@ -1,113 +1,113 @@
 <div class="main-content">
-  <div class="container-fluid">
-      <div class="card">
-          <div class="card-header card-header-danger">
-              <h3 class="card-title">Today's Weather Forecast</h3>
-              <p class="card-category">Bangalore City 
-              </p>
-          </div>
-          <div class="card-body">
-            <div class="main-content">
-              <div class="container-fluid">
-                
-                  <div class="row">
-                      <div class="col-md-6">
-                        <fusioncharts style="background-image: url('assets/background/sunnyImg.jpg')"
-                        [width]="TheromometerWidth"
-                        [height]="TheromometerHeight"
-                        [type]="TheromometerType"
-                        [dataFormat]="TheromometerDataFormat"
-                        [dataSource]="TheromometerDataSource">
-                      </fusioncharts>
-                      
-                      </div>
-                      <div class="com-md-6" style="display: inline-block;">
-                        <fusioncharts
-                        [width]="width"
-                        [height]="height"
-                        [type]="type"
-                        [dataFormat]="dataFormat"
-                        [dataSource]="PressureGaugeDataSource"
-                      >
-                      </fusioncharts>
-                      
-                      </div>
-                    </div>
-                   
-                    <div class="row">
-                      <div class="col-lg-12" >
-                        <div class="card" style="color:white ;background-image: url('assets/background/sunnyImg.jpg');
-                       border: black;">
-                          <div class="card-header" >
-                           
-                            <h2><b>Bengaluru, Karnataka</b></h2>
-                            <h3><b>{{currentWeatherData?.dayOfWeek}} |  {{currentWeatherData?.date}} </b>  </h3>
-                              <h4> <b> {{currentWeatherData?.time}} {{currentWeatherData?.dayOrNight == "D" ? 'AM' : 'PM'}} </b> </h4>
-                            <h3 style="text-decoration: underline;"><b>{{currentWeatherData?.cloudPhrase}}</b></h3>
-                            <div class="row">
-                              <div class="col-lg-6">
-                                <img src="assets/images/icons/icon-5.svg" alt="" style="display: inline-block;" width=68>
-                                <h1 style="display: inline-block;margin-left: 5px ;;" >
-                                  <b>{{currentWeatherData?.temperature}}</b>
-                                </h1>
-                                <br><br>
-                                <div >
-                                  <span ><img src="assets/images/icon-umberella.png" alt=""><b>{{currentWeatherData?.pressure}} </b> | </span>
-                                  <span><img src="assets/images/icon-wind.png" alt=""><b>{{currentWeatherData?.windSpeed}}</b> | </span>
-                                  <span><img src="assets/images/icon-compass.png" alt=""><b>{{currentWeatherData?.windDirection}} | </b></span>
-                                </div>
-                                
-                              </div>
-                              <div class="col-lg-6">
-                                   <b>
-                                    <h4><b>Pressure :  {{currentWeatherData?.pressure}} </b></h4>
-                                    <h4><b>Humidity :  {{currentWeatherData?.relativeHumidity}}</b> </h4>
-                                    <h4><b>Wind Speed : {{currentWeatherData?.windSpeed}} , {{currentWeatherData?.windDirection}}</b> </h4> 
-                                   </b>
-                                    
-          
-                                    <button class="btn btn-danger" (click)="changeGraph('temp')">Temperature</button>
-                                    <button class="btn btn-warning" (click)="changeGraph('wind')">Wind Speed </button>
-                                    <button class="btn btn-success" (click)="changeGraph('pressure')">Pressure  </button>
-                              </div>
-          
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-header card-header-danger">
+                <h3 class="card-title">Today's Weather Forecast</h3>
+                <p class="card-category">Bangalore City
+                </p>
+            </div>
+            <div class="card-body">
+                <div class="main-content">
+                    <div class="container-fluid">
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <fusioncharts style="background-image: url('assets/background/sunnyImg.jpg')"
+                                    [width]="TheromometerWidth" [height]="TheromometerHeight" [type]="TheromometerType"
+                                    [dataFormat]="TheromometerDataFormat" [dataSource]="TheromometerDataSource">
+                                </fusioncharts>
+
                             </div>
-                              <br><br><br>
-                          </div>
-                          <div class="card-body "
-                              style="width:95%;margin-left: 20px;;"
-                              [ngClass]="{'card-header-danger': myClass=='tempClass',
+                            <div class="com-md-6" style="display: inline-block;">
+                                <fusioncharts [width]="width" [height]="height" [type]="type" [dataFormat]="dataFormat"
+                                    [dataSource]="PressureGaugeDataSource">
+                                </fusioncharts>
+
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="card" style="color:white ;background-image: url('assets/background/sunnyImg.jpg');
+                       border: black;">
+                                    <div class="card-header">
+
+                                        <h2><b>Bengaluru, Karnataka</b></h2>
+                                        <h3><b>{{currentWeatherData?.dayOfWeek}} | {{currentWeatherData?.date}} </b>
+                                        </h3>
+                                        <h4> <b> {{currentWeatherData?.time}}
+                                                {{currentWeatherData?.dayOrNight == "D" ? 'AM' : 'PM'}} </b> </h4>
+                                        <h3 style="text-decoration: underline;">
+                                            <b>{{currentWeatherData?.cloudPhrase}}</b></h3>
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <img src="assets/images/icons/icon-5.svg" alt=""
+                                                    style="display: inline-block;" width=68>
+                                                <h1 style="display: inline-block;margin-left: 5px ;;">
+                                                    <b>{{currentWeatherData?.temperature}}</b>
+                                                </h1>
+                                                <br><br>
+                                                <div>
+                                                    <span><img src="assets/images/icon-umberella.png"
+                                                            alt=""><b>{{currentWeatherData?.pressure}} </b> | </span>
+                                                    <span><img src="assets/images/icon-wind.png"
+                                                            alt=""><b>{{currentWeatherData?.windSpeed}}</b> | </span>
+                                                    <span><img src="assets/images/icon-compass.png"
+                                                            alt=""><b>{{currentWeatherData?.windDirection}} |
+                                                        </b></span>
+                                                </div>
+
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <b>
+                                                    <h4><b>Pressure : {{currentWeatherData?.pressure}} </b></h4>
+                                                    <h4><b>Humidity : {{currentWeatherData?.relativeHumidity}}</b> </h4>
+                                                    <h4><b>Wind Speed : {{currentWeatherData?.windSpeed}} ,
+                                                            {{currentWeatherData?.windDirection}}</b> </h4>
+                                                </b>
+
+
+                                                <button class="btn  btn-danger"
+                                                    (click)="changeGraph('temp')">Temperature</button>
+                                                <button class="btn   btn-warning" (click)="changeGraph('wind')">Wind
+                                                    Speed </button>
+                                                <button class="btn  btn-success "
+                                                    (click)="changeGraph('pressure')">Pressure </button>
+                                            </div>
+
+                                        </div>
+                                        <br><br><br>
+                                    </div>
+                                    <div class="card-body " style="width:95%;margin-left: 20px;;" [ngClass]="{'card-header-danger': myClass=='tempClass',
                                 'card-header-warning' : myClass=='windClass' ,
                                 'card-header-success' : myClass=='pressureClass'
-                              }"
-                          > 
-                   
-                              <!-- <div  class="ct-chart" id="Temperature"   ></div> -->
-                              <div  class="ct-chart" id="Temperature" data-x-axis="Time (Hours) "   ></div>
-                              <!-- data-y-axis="Temperature" -->
-                              <!-- data-x-axis="Time (Hours) "  -->
-                              <!-- [ngClass]="{'card-header-danger': myClass=='tempClass',
-                              'card-header-warning' : myClass=='windClass' ,
-                              'card-header-success' : myClass=='pressureClass'
-                            }" 
-                          bg-light-->
-                          </div>
-                          <br><br>
+                              }">
+
+                                        <ng-container *ngIf="myClass=='tempClass'">
+                                            <div class="ct-chart" id="Temperature" data-x-axis="Time (Hours) "
+                                                data-y-axis="Temperature (℉)"></div>
+                                        </ng-container>
+                                        <ng-container *ngIf="myClass=='windClass'">
+                                            <div class="ct-chart" id="Temperature" data-x-axis="Time (Hours) "
+                                                data-y-axis="Wind speed (Mph)"></div>
+                                        </ng-container>
+                                        <ng-container *ngIf="myClass=='pressureClass'">
+                                            <div class="ct-chart" id="Temperature" data-x-axis="Time (Hours) "
+                                                data-y-axis="Pressure (Pa) "></div>
+                                        </ng-container>
+
+                                  
+                                    </div>
+                                    <br><br>
+                                </div>
+                            </div>
                         </div>
-                      </div>
                     </div>
-              </div>
-          
-          
-          </div>
-          </div>
-         
-      </div>
-  </div>
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
 </div>
-
-
-
-
-
-

@@ -1,25 +1,94 @@
+.home {
+    background-image: url("assets/background/coverImg2.jpg");
+    /* background-image:linear-gradient(rgba(47,23,15,.65),rgba(47,23,15,.65)),url('assets/background/coverImg2.jpg'); */
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    margin-top: 0px;
+    /* height: 250vh; */
+    height: auto;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: Raleway;
+}
 
-  
-.home{
-  background-image:url('assets/background/coverImg2.jpg');
-  /* background-image:linear-gradient(rgba(47,23,15,.65),rgba(47,23,15,.65)),url('assets/background/coverImg2.jpg'); */
-  background-attachment:fixed;
-  background-position:center;
-  background-size:cover; 
-  margin-top: 0px;
-  /* height: 250vh; */
-  height: auto ;
-}  
-h1,h2,h3,h4,h5,h6{font-family:Raleway}
+.nav-item {
+    margin-left: 30px;
+    color: #e6a756;
+    font-weight: bold;
+}
 
-.nav-item{
-  margin-left:30px;
-  color:#e6a756 ;
-  font-weight: bold;
+.nav-item:active {
+    background-color: rgba(47, 23, 15, 0.8) !important;
+    transform: scale(1.2);
+}
+
+.nav-item:hover {
+    background-color: rgba(47, 23, 15, 0.8) !important;
+    transform: scale(1.1);
 }
 
 .navbar-custom {
-
-  background-color: rgba(47,23,15,0.9) !important;
-  
+    background-color: rgba(47, 23, 15, 0.9) !important;
 }
+
+.m-80 {
+    margin-right: 80px;
+    color: white;
+}
+
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    80% {
+        transform: translateX(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    80% {
+        transform: translateX(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes moveInTop {
+    0% {
+        opacity: 0;
+        transform: translateY(80px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.site-heading-upper {
+     display: block;
+    animation: moveInLeft 2s ease-in;
+}
+.site-heading-lower {
+     display: block;
+    animation-delay: 2s;
+    animation: moveInRight 2s ease-in;
+}
+

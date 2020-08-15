@@ -74,7 +74,7 @@ export class TodaysWeatherComponent implements OnInit {
     this.weatherService.getCurrentWeather().subscribe((response)=> 
     {
         this.currentWeatherData=response ;
-        
+        this.setTempPressureGaygeValue();
     })
    
       this.weatherService.getTodaysWeather()
@@ -103,7 +103,13 @@ export class TodaysWeatherComponent implements OnInit {
       
 
 
-        this.data_thermometer = {
+     
+
+    
+  }
+
+    setTempPressureGaygeValue() {
+           this.data_thermometer = {
           chart: {
             caption: "Today's Temperature",
             subcaption: "°F",
@@ -119,7 +125,7 @@ export class TodaysWeatherComponent implements OnInit {
            // bgColor: "#000047,#FFFFFF",
            
           },
-          value:"94"
+          value:this.currentWeatherData.temperature
         };
         this.TheromometerDataSource = this.data_thermometer;
     
@@ -166,7 +172,7 @@ export class TodaysWeatherComponent implements OnInit {
           dials: {
             dial: [
               {
-                value: "10",
+                value: this.currentWeatherData.pressure,
                 bgcolor: "#F20F2F",
                 basewidth: "8"
               }
@@ -193,9 +199,7 @@ export class TodaysWeatherComponent implements OnInit {
         this.PressureGaugeDataSource=this.data_pressureGauge ;
       
 
-    
-  }
-
+    }
   
   data_thermometer ;
   TheromometerDataSource ;
