@@ -97,7 +97,7 @@ export class DashboardComponent implements OnInit {
       labels:response.hour ,
       series: [response.value]
     };
-    let optionsChart: any = { lineSmooth: Chartist.Interpolation.cardinal({ tension: 10}), low: 100,high: 3000, 
+    let optionsChart: any = { lineSmooth: Chartist.Interpolation.cardinal({ tension: 10}), low: 0,high: 600, 
     chartPadding: { top: 0, right: 0, bottom: 0, left: 10},}
    
     if(GraphDivId=="#WindEnergy") {
@@ -121,10 +121,10 @@ onGraphLoadFirst(GraphDivId) {
   const dataChart: any = {
     labels: this.EnergyRequiredLabel,
     series: [
-      [500, 250,250,250,250,250,400,600,700,1400,2100,2400,2200,2300,2300,2100,2200,1900,1900,2400,1700,900,600,400]
+      [100,200,250,270,280,300,400,450,380,320,280,270,150,100,50,0,0,0,0,0,0,0,0,0]
     ]
   };
-  const optionsChart: any = { lineSmooth: Chartist.Interpolation.cardinal({ tension: 10}), low: 100,high: 3000, 
+  const optionsChart: any = { lineSmooth: Chartist.Interpolation.cardinal({ tension: 10}), low: 0,high: 600, 
     chartPadding: { top: 0, right: 0, bottom: 0, left: 10},}
 
     var Chart = new Chartist.Line(GraphDivId, dataChart, optionsChart);
